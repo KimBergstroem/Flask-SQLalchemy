@@ -4,9 +4,89 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css')}}"
+    />
+
     <title>Task Manager</title>
   </head>
   <body>
-    <h2>Hello World!</h2>
+    <!-- HEADER SECTION STARTS HERE -->
+    <header>
+      <!-- top navbar -->
+      <nav>
+        <div class="nav-wrapper blue darken-3">
+          <a href="#!" class="brand-logo">Kim Manager</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="fas fa-bar"></i
+          ></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="">New Task</a></li>
+            <li><a href="">Categories</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- mobile sidenav -->
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="">New Task</a></li>
+        <li><a href="">Categories</a></li>
+      </ul>
+    </header>
+    <!-- HEADER SECTION ENDS HERE -->
+
+    <!-- MAIN SECTION STARTS HERE -->
+    <main class="container">{% block content %} {% endblock %}</main>
+    <!-- HEADER SECTION ENDS HERE -->
+
+    <!-- FOOTER SECTION STARTS HERE -->
+    <footer class="page-footer blue darken-3">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">KIM MANAGER</h5>
+            <p class="grey-text text-lighten-4">
+              For educational purpose only.
+            </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="">Contact</a></li>
+              <li>
+                <a class="grey-text text-lighten-3" href="">Information</a>
+              </li>
+              <li><a class="grey-text text-lighten-3" href="">School</a></li>
+              <li><a class="grey-text text-lighten-3" href="">How to</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+          © 2023 Copyright KIM MANAGER
+          <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER SECTION ENDS HERE -->
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
   </body>
 </html>
